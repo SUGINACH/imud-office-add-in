@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="TaskPaneApp">
+  <Id>e8b6d937-4be5-4a75-9473-da24fc87946d</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Torani Systems</ProviderName>
+  <DefaultLocale>he-IL</DefaultLocale>
+  <DisplayName DefaultValue="עימוד תורני מקצועי"/>
+  <Description DefaultValue="מערכת מקצועית לעימוד ספרי קודש וטקסטים תורניים ישירות מתוך Word."/>
+  <IconUrl DefaultValue="https://suginach.github.io/imud-office-add-in/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://suginach.github.io/imud-office-add-in/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://suginach.github.io/imud-office-add-in"/>
+  <AppDomains>
+    <AppDomain>suginach.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://suginach.github.io/imud-office-add-in/index.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Desc"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="ToraniCustomTab">
+              <Group id="ToraniGroup">
+                <Label resid="GroupLabel"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="OpenTaskpaneButton">
+                  <Label resid="ButtonLabel"/>
+                  <Supertip>
+                    <Title resid="ButtonLabel"/>
+                    <Description resid="ButtonDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ToraniTaskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://suginach.github.io/imud-office-add-in/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://suginach.github.io/imud-office-add-in/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://suginach.github.io/imud-office-add-in/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://suginach.github.io/imud-office-add-in"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://suginach.github.io/imud-office-add-in/index.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="עימוד תורני מקצועי"/>
+        <bt:String id="GroupLabel" DefaultValue="עימוד תורני"/>
+        <bt:String id="ButtonLabel" DefaultValue="פתח סרגל עימוד"/>
+        <bt:String id="TabLabel" DefaultValue="עימוד תורני"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Desc" DefaultValue="עימוד ספרי קודש ושערים ברמת דפוס ישירות מ-Word."/>
+        <bt:String id="ButtonDesc" DefaultValue="פתיחת סרגל העימוד התורני המתקדם ועימוד הדפים בזמן אמת."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
